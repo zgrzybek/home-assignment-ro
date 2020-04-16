@@ -1,0 +1,48 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.6.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
+    id 'groovy'
+    id 'idea'
+}
+
+group = 'pl.org.grzybek'
+version = '0.0.1-SNAPSHOT'
+targetCompatibility = 1.8
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    implementation 'com.fasterxml.jackson.core:jackson-core'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.6'
+    implementation 'io.springfox:springfox-swagger2:2.9.2'
+    implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+
+    testImplementation 'org.testcontainers:testcontainers:1.12.3'
+    testImplementation 'org.testcontainers:junit-jupiter:1.12.3'
+    testCompile("org.assertj:assertj-core:3.11.1")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testImplementation 'org.spockframework:spock-core:1.2-groovy-2.4'
+    testImplementation 'org.spockframework:spock-spring:1.2-groovy-2.4'
+    testImplementation "org.testcontainers:spock:1.13.0"
+
+
+}
+
+sourceSets {
+    test {
+        //We want to be able to put groovy files in java directory
+        java { srcDirs = [] }
+        groovy { srcDirs += ['src/test/java'] }
+    }
+}

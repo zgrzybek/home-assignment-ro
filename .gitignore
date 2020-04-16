@@ -1,0 +1,19 @@
+# Ignore IDEA project file
+.idea
+**/*.iml
+**/*.ipr
+
+# Ignore Eclipse project file
+**/.classpath
+**/.project
+**/.settings/
+
+# Gradle generated objects
+.gradle/
+
+# Build objects
+**/build/
+**/target/
+**/out/
+**/bin/
+**/src/querydsl

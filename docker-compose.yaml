@@ -1,0 +1,16 @@
+version: '3.2'
+
+services:
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+    - ~/data:/data/mongodb
+  home-assignment-ro:
+    image: home-assignment-ro
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
