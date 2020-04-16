@@ -4,6 +4,7 @@ plugins {
     id 'java'
     id 'groovy'
     id 'idea'
+    id 'com.adarshr.test-logger' version '2.0.0'
 }
 
 group = 'pl.org.grzybek'
