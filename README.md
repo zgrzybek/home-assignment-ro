@@ -9,6 +9,7 @@ See also [Example requests](#example-requests)
 ## Requirements
 - JAVA 8
 - Docker
+- Gradle
 
 ## How to run the app
 ### Build
